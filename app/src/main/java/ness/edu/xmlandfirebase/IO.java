@@ -11,7 +11,11 @@ import java.io.InputStreamReader;
 
 class IO {
     public static String read(InputStream in) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        return read(in, "utf-8");
+    }
+
+    public static String read(InputStream in, String charset) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in, charset));
         StringBuilder builder = new StringBuilder();
         String line = null;
 

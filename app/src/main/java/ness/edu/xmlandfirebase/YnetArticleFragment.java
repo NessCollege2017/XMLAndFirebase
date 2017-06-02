@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import ness.edu.xmlandfirebase.dummy.DummyContent;
 import ness.edu.xmlandfirebase.dummy.DummyContent.DummyItem;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * A fragment representing a list of Ynet Items.
  */
-public class YnetArticleFragment extends Fragment {
+public class YnetArticleFragment extends Fragment implements YnetDataSource.OnYnetArrivedListener {
 
 
     @Override
@@ -31,9 +32,18 @@ public class YnetArticleFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView)
                 inflater.inflate(R.layout.fragment_ynetarticle, container, false);
 
+
+        YnetDataSource.getYnet(this);
+
+
         recyclerView.setAdapter(new YnetRecyclerAdapter(DummyContent.ITEMS));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         return recyclerView;
+    }
+
+    @Override
+    public void onYnetArrived(List<YnetDataSource.Ynet> data, Exception e) {
+        Toast.makeText(getContext(), data.toString(), Toast.LENGTH_SHORT).show();
     }
 }
