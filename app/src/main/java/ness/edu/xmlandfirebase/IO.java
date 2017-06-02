@@ -16,7 +16,7 @@ class IO {
         String line = null;
 
         try {
-            while ((line = reader.readLine())!=null){
+            while ((line = reader.readLine()) != null){
                 builder.append(line);
             }
         }
