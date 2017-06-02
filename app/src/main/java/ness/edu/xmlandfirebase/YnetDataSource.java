@@ -68,10 +68,6 @@ public class YnetDataSource {
             String src = descriptionElement.getElementsByTag("img").get(0).attr("src");
             description = descriptionElement.text();
 
-            String link = item.getElementsByTag("link").get(0).text();
-//            Log.d("Ness", "Title: " + title);
-//            Log.d("Ness", "description: " + description);
-//            Log.d("Ness", "link: " + link);
             Ynet ynet = new Ynet(title, href, description, src);
             data.add(ynet);
             Log.d("Ness", ynet.toString());
