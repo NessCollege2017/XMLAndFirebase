@@ -43,7 +43,16 @@ public class YnetArticleFragment extends Fragment implements YnetDataSource.OnYn
     }
 
     @Override
-    public void onYnetArrived(List<YnetDataSource.Ynet> data, Exception e) {
-        Toast.makeText(getContext(), data.toString(), Toast.LENGTH_SHORT).show();
+    public void onYnetArrived(final List<YnetDataSource.Ynet> data, final Exception e) {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (e == null)
+                    Toast.makeText(getContext(), data.toString(), Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
