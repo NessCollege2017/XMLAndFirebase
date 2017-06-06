@@ -30,7 +30,7 @@ public class YnetDetailFragment extends Fragment {
         webView = (WebView) v.findViewById(R.id.webview);
         String url = getArguments().getString(ARG_URL);
         //JS
-
+        webView.getSettings().setJavaScriptEnabled(true);
 
         //redirect...
         webView.setWebViewClient(new WebViewClient(){
