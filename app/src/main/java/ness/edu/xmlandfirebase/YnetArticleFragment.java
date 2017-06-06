@@ -14,10 +14,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-//TODO: Delete all but onCreateView
-//TODO: Find the recycler
-//SET the adapter.
-//SET the Layout Manager.
+//TODO: SET the adapter.
 /**
  * A fragment representing a list of Ynet Items.
  */
