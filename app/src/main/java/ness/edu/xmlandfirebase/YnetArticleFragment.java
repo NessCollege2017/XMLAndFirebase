@@ -107,7 +107,10 @@ public class YnetArticleFragment extends Fragment implements YnetDataSource.OnYn
                 if (context instanceof AppCompatActivity){
                     FragmentManager fm = ((AppCompatActivity) context).getSupportFragmentManager();
 
-                    YnetDetailFragment detailFragment = new YnetDetailFragment();
+                    int position = getAdapterPosition();
+                    YnetDataSource.Ynet ynet = data.get(position);
+
+                    YnetDetailFragment detailFragment = YnetDetailFragment.newInstance(ynet.getLink());
 
                     fm.beginTransaction().
                             replace(R.id.frame, detailFragment).
