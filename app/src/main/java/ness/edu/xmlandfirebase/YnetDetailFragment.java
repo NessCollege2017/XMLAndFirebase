@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 /**
@@ -33,8 +34,8 @@ public class YnetDetailFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_ynet_detail, container, false);
 
         String url = getArguments().getString(ARG_URL);
+        Toast.makeText(getContext(), url, Toast.LENGTH_SHORT).show();
 
         return v;
     }
-
 }
