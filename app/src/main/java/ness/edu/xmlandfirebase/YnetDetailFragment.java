@@ -13,9 +13,16 @@ import android.view.ViewGroup;
  */
 public class YnetDetailFragment extends Fragment {
 
+    private static final String ARG_URL = "url";
 
-    public YnetDetailFragment() {
-        // Required empty public constructor
+    public static YnetDetailFragment newInstance(String url) {
+        Bundle args = new Bundle();
+
+        args.putString(ARG_URL, url);
+
+        YnetDetailFragment fragment = new YnetDetailFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
 
@@ -23,7 +30,11 @@ public class YnetDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ynet_detail, container, false);
+        View v = inflater.inflate(R.layout.fragment_ynet_detail, container, false);
+
+        String url = getArguments().getString(ARG_URL);
+
+        return v;
     }
 
 }

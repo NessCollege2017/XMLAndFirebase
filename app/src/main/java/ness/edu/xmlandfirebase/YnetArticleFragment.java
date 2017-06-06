@@ -3,6 +3,8 @@ package ness.edu.xmlandfirebase;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -102,7 +104,16 @@ public class YnetArticleFragment extends Fragment implements YnetDataSource.OnYn
 
             @Override
             public void onClick(View v) {
+                if (context instanceof AppCompatActivity){
+                    FragmentManager fm = ((AppCompatActivity) context).getSupportFragmentManager();
 
+                    YnetDetailFragment detailFragment = new YnetDetailFragment();
+
+                    fm.beginTransaction().
+                            replace(R.id.frame, detailFragment).
+                            addToBackStack("details").
+                            commit();
+                }
             }
         }
     }
