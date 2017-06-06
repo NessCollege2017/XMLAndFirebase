@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import ness.edu.xmlandfirebase.dummy.DummyContent;
-import ness.edu.xmlandfirebase.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 
@@ -25,18 +23,18 @@ import java.util.List;
  */
 public class YnetArticleFragment extends Fragment implements YnetDataSource.OnYnetArrivedListener {
 
+    private RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        RecyclerView recyclerView = (RecyclerView)
+        recyclerView = (RecyclerView)
                 inflater.inflate(R.layout.fragment_ynetarticle, container, false);
 
 
         YnetDataSource.getYnet(this);
 
 
-        recyclerView.setAdapter(new YnetRecyclerAdapter(DummyContent.ITEMS));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         return recyclerView;
@@ -55,4 +53,6 @@ public class YnetArticleFragment extends Fragment implements YnetDataSource.OnYn
         });
 
     }
+
+
 }
