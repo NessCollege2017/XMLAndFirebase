@@ -1,4 +1,4 @@
-package ness.edu.xmlandfirebase;
+package nessit.edu.xmlandfirebase;
 
 import android.content.Intent;
 import android.os.Bundle;

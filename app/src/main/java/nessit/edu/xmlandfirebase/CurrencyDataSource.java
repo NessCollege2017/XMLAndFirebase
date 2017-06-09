@@ -1,7 +1,5 @@
-package ness.edu.xmlandfirebase;
+package nessit.edu.xmlandfirebase;
 
-
-import android.util.Log;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

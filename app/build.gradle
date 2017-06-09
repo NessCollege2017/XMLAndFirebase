@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "ness.edu.xmlandfirebase"
+        applicationId "nessit.edu.xmlandfirebase"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -36,7 +36,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.beardedhen:androidbootstrap:2.3.1'
     compile 'com.jakewharton:butterknife:8.6.0'
-    annotationProcessor  'com.jakewharton:butterknife-compiler:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }
 
 

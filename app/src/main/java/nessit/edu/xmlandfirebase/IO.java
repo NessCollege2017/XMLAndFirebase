@@ -1,4 +1,4 @@
-package ness.edu.xmlandfirebase;
+package nessit.edu.xmlandfirebase;
 
 import java.io.BufferedReader;
 import java.io.IOException;

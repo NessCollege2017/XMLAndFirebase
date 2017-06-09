@@ -1,4 +1,4 @@
-package ness.edu.xmlandfirebase;
+package nessit.edu.xmlandfirebase;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
